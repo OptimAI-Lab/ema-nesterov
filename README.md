@@ -2,13 +2,13 @@
 
 This repository contains the official implementation of the experiments in this [paper](https://arxiv.org/abs/2605.25395).
 
-## Environment Setup
-
-Follow `env.sh` to setup a conda environment, applicable to both `nanogpt/` and `llama/`.
-
 ## Quick Usage
 
 See https://github.com/OptimAI-Lab/ema-nesterov-module.
+
+## Environment Setup for Experiments
+
+Follow `env.sh` to setup a conda environment, applicable to both `nanogpt/` and `llama/`.
 
 ## Credits
 
