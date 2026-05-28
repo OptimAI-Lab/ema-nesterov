@@ -4,7 +4,7 @@ from torch.optim import Optimizer
 
 import os
 import random
-from muon import MuonWithAuxAdam
+from optimizers.muon import MuonWithAuxAdam
 
 def set_seed_deterministic(seed):
     os.environ['CUBLAS_WORKSPACE_CONFIG'] = ':4096:8'
