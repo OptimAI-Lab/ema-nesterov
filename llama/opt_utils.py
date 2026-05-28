@@ -1,6 +1,4 @@
 import torch
-import torch.distributed as dist
-from torch.optim import Optimizer
 
 import os
 import random
