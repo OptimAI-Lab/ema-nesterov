@@ -308,10 +308,8 @@ def parse_args(args):
     parser.add_argument("--min_lr_ratio", type=float, default=0.1) 
     
     # Input files
-    parser.add_argument('--input_bin', type=str, default='/projects/standard/mhong/shared/glent007/fineweb_data/fineweb10B/fineweb_train_*.bin',
-                        help='Input .bin files to train on')
-    parser.add_argument('--input_val_bin', type=str, default='/projects/standard/mhong/shared/glent007/fineweb_data/fineweb10B/fineweb_val_*.bin',
-                        help='Input .bin files for validation')
+    parser.add_argument('--input_bin', type=str, help='Input .bin files to train on', required=True)
+    parser.add_argument('--input_val_bin', type=str, help='Input .bin files for validation', required=True)
 
     # Optimization hyperparameters
     parser.add_argument('--batch_size', type=int, default=512,
