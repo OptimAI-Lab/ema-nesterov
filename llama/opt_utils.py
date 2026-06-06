@@ -115,7 +115,10 @@ class EMA_Nesterov(torch.optim.Optimizer):
                 # update lookahead buffer
                 buf = param_state['lookahead_buffer'][0]
 
-                param_state['lookahead_buffer'] = (buf.lerp_(look, 1 - lookahead_ema), self.it) # m^{t+1} = beta * m^t + (1-beta) * look
+                if param_state['lookahead_buffer'][1] == -1:
+                    param_state['lookahead_buffer'] = (buf.copy_(look), self.it) # m^{0} = look
+                else:
+                    param_state['lookahead_buffer'] = (buf.lerp_(look, 1 - lookahead_ema), self.it) # m^{t+1} = beta * m^t + (1-beta) * look
 
                 # update prev_params buffer
                 param_state['prev_params'] = (param_state['prev_params'][0].copy_(p), self.it)
